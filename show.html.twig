@@ -1,0 +1,9 @@
+{% for a in authors %}
+{%if a.nb_books>0%}
+<input type="submit" value="buy">
+<img src="/images/william-shakespeare.jpg">
+<p>Name : {{a.username | upper}} | Email: {{a.email}} | nombre de livres: {{a.nb_books}} </p>
+{%endif%}
+<a href="{{path('d',{'id':a.username})}}"> details </a>
+{% endfor %}
+{{dump(authors)}}
